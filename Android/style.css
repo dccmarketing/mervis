@@ -1,0 +1,154 @@
+/*
+Theme Name: Mervis Industries Android App
+Theme URI: http://www.mervis.com
+Version: 1.0
+Author: Aaron Stanley & EJ Panganiban
+Author URI: http://www.dccmarketing.com
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
+
+
+	.reg	 		{font-weight:400;}
+	.med			{font-weight:500;}
+	.bold 		{font-weight:700;}
+	.s13 		{font-size:13px;line-height:15px;}
+	.s19 		{font-size:19px;line-height:21px;}
+	.s27 		{font-size:27px;line-height:29px;}
+	.s31 		{font-size:31px;line-height:33px;}
+	.s35 		{font-size:35px;line-height:37px;}
+	.s37 		{font-size:37px;line-height:39px;}
+	.s49 		{font-size:49px;line-height:51px;}
+
+	.upper 		{text-transform:uppercase;}
+
+
+body {margin:0;font-family: 'Roboto', sans-serif;}
+a {text-decoration:none;}
+strong {font-family:'bold';}
+table {margin: 20px 0 !important;}
+
+.container {margin:0 auto;}
+.fleft {float:left;}
+.fright {float:right;}
+.center {text-align:center;}
+.justify {text-align:justify;}
+.right {text-align:right;}
+
+.white {color:#FFF;}
+.grey {color:#58595b;}
+.red {color:#9B1518;}
+
+.inner {width:90%;margin:0 auto;}
+.site {
+	background: url(images/Scrap-Metal-Background.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#header {width:100%;height: 86px;}
+.width50 {width:50.7%;}
+
+
+.opaque {
+	background: url(images/Scrap-Metal-Background-Blur-Dark.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.redgrad {
+	background: #9b1518 !important;
+	background: -moz-linear-gradient(left,  #9b1518 0%, #cd2229 50%, #9b1518 100%) !important;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#9b1518), color-stop(50%,#cd2229), color-stop(100%,#9b1518)) !important;
+	background: -webkit-linear-gradient(left,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+	background: -o-linear-gradient(left,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+	background: -ms-linear-gradient(left,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+	background: linear-gradient(to right,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b1518', endColorstr='#9b1518',GradientType=1 );
+}
+
+#price-currentline {background:#9B1518;padding:5px 0;}
+#price-disclaimer {padding:10px 0;}
+#price-footer {
+	background: url(images/Menu-Bar-Background.png);
+	background-color:#000;
+}
+.footericons {width:20%;text-align: center;padding: 20px 0;}
+
+#gettextupdates {
+	width: 70%;margin: 0 auto;padding: 20px 0;
+}
+#accountprefs {
+	border: 2px solid #FFF;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 30px;
+	padding: 20px 0;
+	background: url(images/Form-Field-Container.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#notification-content {
+	background-color:#DADADA;
+}
+#notelist {padding: 20px 0;border-top: 3px solid #58595b;}
+
+
+
+
+
+.with_frm_style .frm_top_container label.frm_primary_label {display:none !important;}
+.with_frm_style input[type="text"] {
+	padding:10px !important;
+	font-size: 27px !important;
+	background-color:transparent !important;
+	background: url(images/Form-Field-Container-Icon.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color:#FFF !important;
+	border-color:#FFF !important;
+	border-width: 2px !important;
+}
+.with_frm_style select {
+	padding:10px !important;
+	font-size: 27px !important;
+	background-color:transparent !important;
+	background: url(images/Form-Field-Container-Icon.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color:#9fa9a9 !important;
+	border-color:#FFF !important;
+	border-width: 2px !important;
+	height:55px !important;
+}
+.with_frm_style .frm_submit input[type="submit"] {
+	width:50% !important;
+	font-family: 'Roboto' !important;
+	font-size:35px !important;
+	font-weight:700 !important;
+		background: #9b1518 !important;
+	background: -moz-linear-gradient(left,  #9b1518 0%, #cd2229 50%, #9b1518 100%) !important;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#9b1518), color-stop(50%,#cd2229), color-stop(100%,#9b1518)) !important;
+	background: -webkit-linear-gradient(left,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+	background: -o-linear-gradient(left,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+	background: -ms-linear-gradient(left,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+	background: linear-gradient(to right,  #9b1518 0%,#cd2229 50%,#9b1518 100%) !important;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b1518', endColorstr='#9b1518',GradientType=1 );
+	border-width: 0px !important;
+	color:#FFF !important;
+	border-radius:0px !important;
+	letter-spacing:2px !important;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+.frm_forms.with_frm_style {max-width:100% !important;}
+.with_frm_style form {text-align: center !important;}
