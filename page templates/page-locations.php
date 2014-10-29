@@ -5,29 +5,13 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <!-- ==================== PAGE HEADER ==================== -->
-<div id="pageheadertext" style="position: absolute;margin-top: 180px;width:100%;">
-	<div class="center boldital s80 upper white" id="headerpagesub">
-		<span id="pagetitleshadow"><?php the_title(); ?></span>
+<div id="pageheadertext" class="pageheader">
+	<div class="headerpagesub" id="headerpagesub">
+		<?php the_title(); ?>
 	</div>
-</div>
+</div><?php
 
-<div id="mobile-pageheader" class="mobile-pageheader"><?php
-
-$trees = array( 153, 165, 136, 126, 124, 122, 118, 506, 511, 513, 515 );
-
-foreach ( $trees as $tree ) {
-
-	if ( is_tree( $tree ) ) {
-
-		?><img src="<?php the_field( 'pageheader', $tree ); ?>"><?php
-
-	}
-
-} // foreach
-
-?></div><?php
-
-get_template_part( 'menu', 'belowslider' );
+	get_template_part( 'menus/menu', 'belowslider' );
 
 ?><!-- ==================== PAGE HEADER ==================== -->
 
@@ -39,12 +23,12 @@ get_template_part( 'menu', 'belowslider' );
 		} ?>
 	</div>
 
-	<div id="mobile-menu" style="padding:10px 0;">
+<!--	<div style="padding:10px 0;">
 		<div class="sidebar-menu"><?php
 
-			get_template_part( 'menu', 'sidebar' );
+			// get_template_part( 'partial', 'sidebarmenu' );
 
-		?></div>
+		?></div> -->
 		<div class="fleft" id="mobile-content">
 			<div class="adj-padding bold s32 upper dred"><?php the_title(); ?></div>
 			<div class="adj-padding justify medium s14" style="padding:10px 0;">

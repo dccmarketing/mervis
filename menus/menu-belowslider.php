@@ -1,5 +1,5 @@
-<nav id="site-navigation" class="main-navigation" role="navigation"><?php
-	/*<button class="menu-toggle"><?php _e( 'Menu' ); ?></button><?php*/
+<nav id="site-navigation" class="main-navigation" role="navigation">
+	<button class="menu-toggle"><?php _e( 'Menu' ); ?></button><?php
 
 if ( has_nav_menu( 'belowslider' ) ) {
 					

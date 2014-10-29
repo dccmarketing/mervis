@@ -11,7 +11,7 @@ function register_my_menus() {
       'header-menu' => __( 'Header Menu' ),
       'extra-menu' => __( 'Extra Menu' ),
       'belowslider' => __( 'Below Slider' ),
-      'sidebar-menu' => __( 'Sidebar Menu' )
+      'top-tabs-menu' => __( 'Top Tabs Menu' )
     )
   );
 }
@@ -84,23 +84,19 @@ function project_create_taxonomies()
 
 
 /** ______________________________ HEADER TREE ______________________________ */
-function is_tree($pid)
-{
+function is_tree($pid) {
   global $post;
 
   $ancestors = get_post_ancestors($post->$pid);
   $root = count($ancestors) - 1;
   $parent = $ancestors[$root];
 
-  if(is_page() && (is_page($pid) || $post->post_parent == $pid || in_array($pid, $ancestors)))
-  {
+  if(is_page() && (is_page($pid) || $post->post_parent == $pid || in_array($pid, $ancestors))) {
     return true;
-  }
-  else
-  {
+  } else {
     return false;
   }
-};
+}
 
 
 
@@ -157,6 +153,7 @@ function mervis_scripts() {
 	wp_enqueue_style( 'mervis-jqueryui-style', get_template_directory_uri() . '/css/jquery-ui.css' );
 
 	wp_enqueue_script( 'mervis-public-script', get_template_directory_uri() . '/js/public.js', array( 'jquery', 'jquery-ui-accordion' ) );
+	wp_enqueue_script( 'mervis-nav-script', get_template_directory_uri() . '/js/navigation.min.js', array(), '20130115', true );
 
 	// <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 
@@ -174,5 +171,28 @@ function load_fonts() {
 } // load_fonts()
 add_action( 'wp_print_styles', 'load_fonts' );
 
+
+
+function add_header_images() {
+
+	echo '<style>';
+
+	$trees = array( 153, 165, 136, 126, 124, 122, 118, 506, 511, 513, 515 );
+
+	foreach ( $trees as $tree ) {
+
+		if ( is_tree( $tree ) ) {
+
+			echo '.pageheader{background-image:url(' . get_field( "pageheader", $tree ) . ');}';
+
+		}
+
+	} // foreach
+
+	echo '</style>';
+
+} // add_header_images()
+
+add_action( 'wp_footer', 'add_header_images' );
 
 

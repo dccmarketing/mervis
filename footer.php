@@ -29,6 +29,10 @@ echo apply_filters('the_content', $strings[0] .  $strings[1]);
 </div>
 <!-- =================== NEWS BOX ==================== --><?php
 
+else:
+
+get_template_part( 'menu', 'footer' );
+
 endif;
 
 ?><!-- =================== FOOTER CONTENT ==================== -->
@@ -89,6 +93,6 @@ endif;
 <!-- =================== MOBILE COPYRIGHT ==================== -->
 
 
-<?php wp_footer(); ?> 
+<?php wp_footer(); ?>
 </body>
 </html>

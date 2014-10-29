@@ -1,9 +1,11 @@
 jQuery(function($){
-  $(function() {
-    $( "#accordion" ).accordion({
-      heightStyle: "content", collapsible: true, active: false
-    });
-  });
+	$(function() {
+		$( "#accordion" ).accordion({
+			heightStyle: "content", 
+			collapsible: true, 
+			active: false
+		});
+	});
 });
 
 setTimeout(function(){var a=document.createElement("script");

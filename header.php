@@ -35,7 +35,7 @@
 
 </head>
 
-<body style="margin:0;">
+<body style="margin:0;" <?php body_class(); ?>>
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NVDV4B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -64,28 +64,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<input type="submit" class="search-submit" value="Search" />
 			</form>
 			</div>
-			<div class="fleft demi s16 upper">
-				<div id="headers">
-					<a href="https://clientweb.mervis.com/Default.asp" target="_blank">
-					Client Login
-					</a>
-				</div>
-			</div>
-			<div class="fleft demi s16 upper">
-				<div id="headers">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/scrapapp.png">
-					<a target="_blank" href="https://itunes.apple.com/us/app/mervis-scrap-app/id891727156?mt=8">Scrap App</a>
-				</div>
-			</div>
+			<div class="upper-tab">
+				<a href="https://clientweb.mervis.com/Default.asp" target="_blank">Client Login</a>
+           </div>
+           <div class="upper-tab">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/scrapapp.png">
+				<a target="_blank" href="https://itunes.apple.com/us/app/mervis-scrap-app/id891727156?mt=8">Scrap App</a>
+           </div>
 		</div>
-		<div id="headermenu" class="fright medium s18 white upper">
-			<a href="/news/">News</a> | 
-			<a href="/locations/">Locations</a> | 
-			<a href="/employment/">Employment</a> | 
-			<a href="/contact-us/">Contact Us</a>
-		</div>
+		<div class="header-menu"><?php
 
-		<br style="clear:both" />
+			get_template_part( 'menus/menu', 'header' );
+
+		?></div><br style="clear:both" />
 	</div>
 </div>
 <!-- =================== HEADER ==================== -->
