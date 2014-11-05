@@ -11,7 +11,11 @@ function register_my_menus() {
       'header-menu' => __( 'Header Menu' ),
       'extra-menu' => __( 'Extra Menu' ),
       'belowslider' => __( 'Below Slider' ),
-      'top-tabs-menu' => __( 'Top Tabs Menu' )
+      'top-tabs-menu' => __( 'Top Tabs Menu' ),
+      'home-about' => __( 'Home About Menu' ),
+      'home-personal' => __( 'Home Personal Menu' ),
+      'home-industrial' => __( 'Home Industrial Menu' ),
+      'home-education' => __( 'Home Education Menu' ),
     )
   );
 }
@@ -88,6 +92,9 @@ function is_tree($pid) {
   global $post;
 
   $ancestors = get_post_ancestors($post->$pid);
+
+  if ( empty( $ancestors ) ) { return TRUE; }
+
   $root = count($ancestors) - 1;
   $parent = $ancestors[$root];
 

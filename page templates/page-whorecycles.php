@@ -14,20 +14,14 @@
 
 ?><!-- ==================== PAGE HEADER ==================== -->
 
-<div id="pagecontent" class="container">
+<div class="content">
+	<div class="container">
 
-	<div id="breadcrumbs" class="pad5 medium s14 grey">
-		<?php if ( function_exists('yoast_breadcrumb') ) {
-		yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-		} ?>
-	</div>
-
-<!--	<div style="padding:10px 0;">
-		<div class="sidebar-menu"><?php
-
-			// get_template_part( 'partial', 'sidebarmenu' );
-
-		?></div> -->
+		<div class="breadcrumbs">
+			<?php if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+			} ?>
+		</div>
 		<div class="fleft" id="mobile-content">
 			<div class="adj-padding bold s32 upper dred"><?php the_title(); ?></div>
 			<div class="adj-padding justify medium s14" style="padding:10px 0;"><?php the_content(); ?></div>
@@ -38,10 +32,8 @@
 				<iframe src="/wp-content/themes/mervis/includes/Light/mobile.html" height="550" width="320" scrolling="no">
 			</div>
 		</div>
-		<br style="clear:both" />
-	</div>
-
-</div>
+	</div><!-- .container -->
+</div><!-- .content -->
 
 <?php endwhile; ?>
 <?php endif; ?>

@@ -44,11 +44,11 @@ endif;
 
 	} ?>">
 	<div class="footer-wrap">
-		<div class="fleft" id="footercon">
+		<div class="footercon">
 			<div class="pad5 footer-title">Who is MERVIS?</div>
 			<div class="reg s14"><?php the_field('whois','178'); ?></div>
 		</div>
-		<div class="fleft" id="footer-whatdoes">
+		<div class="whatdoes">
 			<div class="pad5 footer-title">What does MERVIS offer?</div>
 			<div class="reg s14 footer-text">
 				<?php if(get_field('whatdoes','178')): ?>
@@ -58,18 +58,20 @@ endif;
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class="fleft" id="footer-links">
-			<div class="pad5" style="line-height:28px;">
-				<?php if(get_field('links','178')): ?>
-				<?php while(has_sub_field('links','178')): ?>
-				      <div class="footlinks">
-						<a href="<?php the_sub_field('link'); ?>">
-						<?php the_sub_field('title'); ?>
-						</a>
-					</div>
-				<?php endwhile; ?>
-				<?php endif; ?>
-			</div>
+		<div class="footer-links">
+			<div class="pad5" style="line-height:28px;"><?php
+				
+				if( get_field( 'links','178' ) ):
+
+					while( has_sub_field( 'links', '178' ) ): ?>
+				    	<div class="footlinks">
+							<a href="<?php the_sub_field( 'link' ); ?>"><?php
+								the_sub_field( 'title' );
+							?></a>
+						</div><?php
+					endwhile;
+				endif;
+			?></div>
 		</div>
 		<br style="clear:both" />
 	</div>
@@ -78,20 +80,14 @@ endif;
 
 
 <!-- =================== COPYRIGHT ==================== -->
-<div id="copyright" class="container grey center reg s12">
-	© MERVIS 2014 - All Rights Reserved | <a href="/privacy-policy/">Privacy</a> | <a href="/terms-of-use/">Terms of Use</a> | <a href="/site-map/">Site Map</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Site designed and developed by <a href="http://www.dccmarketing.com" target="_blank">DCC Marketing</a>
+<div class="bottom">
+	<div class="container">
+		<div class="copyright">© MERVIS 2014 - All Rights Reserved</div>
+		<div class="links"> | <a href="/privacy-policy/">Privacy</a> | <a href="/terms-of-use/">Terms of Use</a> | <a href="/site-map/">Site Map</a></div>
+		<div class="credits">Site designed and developed by <a href="http://www.dccmarketing.com" target="_blank">DCC Marketing</a></div>
+	</div>
 </div>
 <!-- =================== COPYRIGHT ==================== -->
-
-
-<!-- =================== MOBILE COPYRIGHT ==================== -->
-<div id="mobile-copyright" class="container grey center reg s12">
-	<div>© MERVIS 2014 - All Rights Reserved</div>
-	<div>Site designed and developed by <a href="http://www.dccmarketing.com" target="_blank">DCC Marketing</a></div>
-
-</div>
-<!-- =================== MOBILE COPYRIGHT ==================== -->
-
 
 <?php wp_footer(); ?>
 </body>

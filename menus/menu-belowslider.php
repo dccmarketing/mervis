@@ -14,4 +14,5 @@ if ( has_nav_menu( 'belowslider' ) ) {
 
 	wp_nav_menu( $menu );
 
-} ?></nav><!-- .site-navigation -->
+} ?>
+</nav><!-- .site-navigation -->

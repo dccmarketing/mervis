@@ -56,13 +56,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<a href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logotext.png"></a>
 		</div>
 		<div id="topmenu" class="fright">
-			<div class="fleft">
-			<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-			<label>
-			<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:" />
-			</label>
-			<input type="submit" class="search-submit" value="Search" />
-			</form>
+			<div class="search">
+				<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+				<label>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+				</form>
 			</div>
 			<div class="upper-tab">
 				<a href="https://clientweb.mervis.com/Default.asp" target="_blank">Client Login</a>

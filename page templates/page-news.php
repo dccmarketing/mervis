@@ -14,54 +14,32 @@
 
 ?><!-- ==================== PAGE HEADER ==================== -->
 
-<div id="pagecontent" class="container">
+<div class="content">
+	<div class="container">
 
-	<div id="breadcrumbs" class="pad5 medium s14 grey">
-		<?php if ( function_exists('yoast_breadcrumb') ) {
-		yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-		} ?>
-	</div>
-
-<?php endwhile; ?>
-<?php endif; ?>
-
-
-<!--	<div style="padding:10px 0;">
-		<div class="sidebar-menu"><?php
-
-			// get_template_part( 'partial', 'sidebarmenu' );
-
-		?></div> -->
-		<div class="fleft" id="mobile-content">
-
-			<div class="s14">
-
-
-
-
-<div id="accordion">
-
-<?php if (have_posts()) : ?>
-<?php query_posts("showposts=50"); ?>
-<?php while (have_posts()) : the_post(); ?>
-
-	<h1><?php the_title(); ?></h1>
-	<div class="justify medium s14"><?php the_content(); ?></div>
-
-<?php endwhile; ?>
-<?php endif; ?>
-
-</div>
-
-			</div>
-
-
-
+		<div class="breadcrumbs">
+			<?php if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+			} ?>
 		</div>
-		<br style="clear:both" />
-	</div>
+		<div class="fleft" id="mobile-content">
+			<div class="s14">
+				<div id="accordion">
 
-</div>
+				<?php if (have_posts()) : ?>
+				<?php query_posts("showposts=50"); ?>
+				<?php while (have_posts()) : the_post(); ?>
+
+					<h1><?php the_title(); ?></h1>
+					<div class="justify medium s14"><?php the_content(); ?></div>
+
+				<?php endwhile; ?>
+				<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div><!-- .container -->
+</div><!-- .content -->
 
 
 <?php get_footer(); ?>
