@@ -9,9 +9,7 @@ function register_my_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
-      'extra-menu' => __( 'Extra Menu' ),
       'belowslider' => __( 'Below Slider' ),
-      'top-tabs-menu' => __( 'Top Tabs Menu' ),
       'home-about' => __( 'Home About Menu' ),
       'home-personal' => __( 'Home Personal Menu' ),
       'home-industrial' => __( 'Home Industrial Menu' ),
@@ -86,28 +84,11 @@ function project_create_taxonomies()
     ));
 }
 
-
-/** ______________________________ HEADER TREE ______________________________ */
-function is_tree($pid) {
-  global $post;
-
-  $ancestors = get_post_ancestors($post->$pid);
-
-  if ( empty( $ancestors ) ) { return TRUE; }
-
-  $root = count($ancestors) - 1;
-  $parent = $ancestors[$root];
-
-  if(is_page() && (is_page($pid) || $post->post_parent == $pid || in_array($pid, $ancestors))) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-
-
-/** ______________________________ SEARCH RESULTS ______________________________ */
+/**
+ * Search Results
+ * 
+ * @return [type] [description]
+ */
 function search_excerpt_highlight() {
     $excerpt = get_the_excerpt();
     $keys = implode('|', explode(' ', get_search_query()));
@@ -151,10 +132,10 @@ remove_action('wp_print_styles', 'cc_tabby_css', 30);
  */
 function mervis_scripts() {
 
+	wp_enqueue_style( 'mervis-reset-style', get_template_directory_uri() . '/css/reset.css' );
 	wp_enqueue_style( 'mervis-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'mervis-font-style', get_template_directory_uri() . '/css/fonts.css' );
 	wp_enqueue_style( 'mervis-fluidity-style', get_template_directory_uri() . '/css/fluidity.css' );
-	wp_enqueue_style( 'mervis-reset-style', get_template_directory_uri() . '/css/reset.css' );
 	wp_enqueue_style( 'mervis-animate-style', get_template_directory_uri() . '/css/animate.css' );
 	wp_enqueue_style( 'mervis-hover-style', get_template_directory_uri() . '/css/hover.css' );
 	wp_enqueue_style( 'mervis-jqueryui-style', get_template_directory_uri() . '/css/jquery-ui.css' );
@@ -178,28 +159,39 @@ function load_fonts() {
 } // load_fonts()
 add_action( 'wp_print_styles', 'load_fonts' );
 
+/**
+ * Prints whatever in a nice, readable format
+ * 
+ * @param 	mixed 		$input 		Something to pretty print, usually an array or object
+ * 
+ * @return 	mixed 					The input between pre tags and in print_r()
+ */
+function pretty( $input ) {
 
+	echo '<pre>'; print_r( $input ); echo '</pre>';
 
-function add_header_images() {
+} // pretty()
 
-	echo '<style>';
+/**
+ * Returns the URL for the page header
+ *
+ * Looks for a header image for the current page
+ * If there isn't one, it grabs the parent's header image
+ * 
+ * @param 	int 	$pageID 		The page ID
+ * 
+ * @return 	URL 					The URL for the page header image
+ */
+function get_pageheader_bg( $pageID ) {
 
-	$trees = array( 153, 165, 136, 126, 124, 122, 118, 506, 511, 513, 515 );
+	$image = get_field( 'pageheader', $pageID );
 
-	foreach ( $trees as $tree ) {
+	if ( ! empty( $image ) ) { return $image; }
 
-		if ( is_tree( $tree ) ) {
+	$ancestors 	= get_post_ancestors( $pageID );
+	$image 		= get_field( 'pageheader', $ancestors[0] );
 
-			echo '.pageheader{background-image:url(' . get_field( "pageheader", $tree ) . ');}';
+	if ( ! empty( $image ) ) { return $image; }
 
-		}
-
-	} // foreach
-
-	echo '</style>';
-
-} // add_header_images()
-
-add_action( 'wp_footer', 'add_header_images' );
-
+} // get_pageheader_bg()
 

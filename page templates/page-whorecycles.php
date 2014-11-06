@@ -4,7 +4,7 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <!-- ==================== PAGE HEADER ==================== -->
-<div id="pageheadertext" class="pageheader">
+<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( get_the_ID() ); ?>);">
 	<div class="headerpagesub" id="headerpagesub">
 		<?php the_title(); ?>
 	</div>
@@ -26,10 +26,10 @@
 			<div class="adj-padding bold s32 upper dred"><?php the_title(); ?></div>
 			<div class="adj-padding justify medium s14" style="padding:10px 0;"><?php the_content(); ?></div>
 			<div id="timeline">
-				<iframe src="/wp-content/themes/mervis/includes/Light/index.html" height="550" width="780" scrolling="no">
+				<iframe src="/wp-content/themes/mervis/includes/Light/index.html" height="550" width="100%" scrolling="no"></iframe>
 			</div>
 			<div id="mobile-timeline">
-				<iframe src="/wp-content/themes/mervis/includes/Light/mobile.html" height="550" width="320" scrolling="no">
+				<iframe src="/wp-content/themes/mervis/includes/Light/mobile.html" height="550" width="320" scrolling="no"></iframe>
 			</div>
 		</div>
 	</div><!-- .container -->

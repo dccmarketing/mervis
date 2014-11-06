@@ -8,7 +8,8 @@ Template: mervis
 */
 
 $bp__menu-button: 650px;
-$bp__tablet 		: $bp__menu-button + 65;
+$bp__tablet 	: $bp__menu-button + 65;
+$bp__full-menu 	: 900px;
 
 .reg {
 	font-family: 'reg';
@@ -331,7 +332,7 @@ p {
 
 	@media only screen and (max-width: $bp__menu-button) {		
 		float: inherit;
-		margin-top: 183px;
+		margin-top: 200px;
 		width: 100%;
 		background: #9B1418;
 
@@ -449,28 +450,32 @@ p {
 	padding-top: 3px;
 
 	@media screen and (min-width: $bp__menu-button + 1) {
-		margin: -60px auto 6em;
+		margin: -60px auto 0;
 		padding-top: 0;
 	}
 }
 
 .fpmenuboxcontent {
 	padding: 40px 0;
-	background-color: #DCDDDE;
-	background-image: linear-gradient(to bottom, #DCDDDE 0%, #FFFFFF 100%);
 	margin: 0 0 1em;
 	text-align: center;
-	font-size: 18px;
-	line-height: 20px;
 	font-family: 'demi';
 
 	@media screen and (min-width: $bp__menu-button + 1) {
-		padding: 20px 0 0;
+		padding: 1em 0 2em;
 		margin: 0;
 	}
 
 	a {
 		color: #939598;
+		font-size: 22px;
+		line-height: 1.5em;
+		text-align: center;
+
+		@media screen and (min-width: $bp__tablet) {
+			font-size: 16px;
+			line-height: 20px;
+		}
 
 		&:hover {
 			color: #9B1418;
@@ -481,29 +486,25 @@ p {
 .fpmenubox {
 	width: 100%;
 	float: left;
-
-	@media screen and (max-width: $bp__menu-button) {
-		padding: 0px;
-	}
+	padding: 0px;
+	background-color: #DCDDDE;
+	background-image: linear-gradient(to bottom, #DCDDDE 0%, #FFFFFF 100%);
 
 	@media only screen and (min-width: $bp__menu-button + 1) {
-		width: 252px;
-		margin: 4px;
+		width: 49%;
+		min-height: 310px;
+		margin: 0.5%;
+	}
+
+	@media only screen and (min-width: $bp__tablet) {
+		width: 24%;
 	}
 
 	.menu {
+		text-transform: uppercase;
 
 		@media only screen and (min-width: $bp__menu-button + 1) {
 			background: none;
-			font-size: 16px;
-			text-transform: uppercase;
-			line-height: 20px;
-		}
-	}
-
-	dt {
-		a {
-			text-align: center !important;
 		}
 	}
 }
@@ -565,6 +566,10 @@ p {
 #fpnewsbox {
 	background: #000;
 	padding: 1em;
+
+	.container {
+		margin-bottom: 0;
+	}
 }
 
 
@@ -626,6 +631,22 @@ p {
 	.buttons {
 		overflow: hidden;
 		margin: 0 auto 1.5em;
+
+		a {
+			font-size: 26px;
+			text-transform: uppercase;
+			padding: 1.5em;
+			float: left;
+			box-sizing: border-box;
+			color: #fff;
+			background: red;
+			margin: 0 10%;
+			text-align: center;
+			text-shadow: 1px 1px 5px #000;
+			font-family: 'boldob';
+
+			@include redgrad;
+		}
 	}
 }
 
@@ -656,28 +677,6 @@ p {
 	}
 }
 
-.sell-button{
-	display: inline-block;
-	width: 49%;
-	padding: 1.5em;
-	box-sizing: border-box;
-	text-align: center;
-	overflow: auto;
-
-	a {
-		padding: 1.5em;
-		text-align: center;
-		font-size: 26px;
-		text-shadow: 1px 1px 5px #000;
-		text-transform: uppercase;
-		font-family: 'boldob';
-		box-sizing: border-box;
-		color: #fff !important;
-
-		@include redgrad;
-	}
-}
-
 
 /**
  * Below Slider Menu
@@ -689,23 +688,30 @@ p {
 	float			: left;
 	width			: 100%;
 	background 		: #000;
-	margin-bottom 	: 1.5em;
+	margin-bottom 	: 3em;
+	box-sizing 		: border-box;
+
+	@media only screen and (min-width: $bp__menu-button + 1) {
+		margin-bottom 	: 1.5em;
+	}
 
 	ul {
 		list-style	: none;
 		margin		: 0;
 		padding-left: 0;
-		display 	: inline-block;
+		display 	: none;
+		box-sizing 	: border-box;
 
-		@media screen and (max-width: $bp__menu-button) {
-			display: none;
+		@media screen and (min-width: $bp__full-menu + 1) {
+			display: inline-block;
 		}
 
 		ul {
 			display		: inherit;
 			background	: #000;
+			box-sizing: border-box;
 
-			@media only screen and (min-width: $bp__menu-button + 1) {
+			@media only screen and (min-width: $bp__full-menu + 1) {
 				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
 				float		: left;
 				position	: absolute;
@@ -716,14 +722,16 @@ p {
 			}
 
 			ul {
+				box-sizing: border-box;
+
 				a {
-					@media screen and (max-width: $bp__menu-button) {
+					@media screen and (max-width: $bp__full-menu) {
 						padding: 0.5em 3em;
 						border-left: none;
 					}
 				}
 
-				@media only screen and (min-width: $bp__menu-button + 1) {
+				@media only screen and (min-width: $bp__full-menu + 1) {
 					left: -999em;
 					top	: 0;
 				}
@@ -731,27 +739,27 @@ p {
 
 			a {
 
-				@media screen and (max-width: $bp__menu-button) {
+				@media screen and (max-width: $bp__full-menu) {
 					padding: 0.5em 2em;
 				}
 			}
 
 			li {
-				@media only screen and (min-width: $bp__menu-button + 1) {
+				@media only screen and (min-width: $bp__full-menu + 1) {
 					display: block;
 					float: none;
 				}
 			}
 
 			li:last-child {
-				@media screen and (max-width: $bp__menu-button) {
+				@media screen and (max-width: $bp__full-menu) {
 					padding-bottom: 0;
 				}
 
 				&:hover {
 
 					> ul {
-						@media only screen and (min-width: $bp__menu-button + 1) {
+						@media only screen and (min-width: $bp__full-menu + 1) {
 							left: 100%;
 						}
 					}
@@ -771,8 +779,9 @@ p {
 
 	li {
 		text-align: left;
+		box-sizing: border-box;
 
-		@media only screen and (min-width: $bp__menu-button + 1) {
+		@media only screen and (min-width: $bp__full-menu + 1) {
 			float	: left;
 			position: relative;
 		}
@@ -780,7 +789,7 @@ p {
 		&:hover {
 
 			> ul {
-				@media only screen and (min-width: $bp__menu-button + 1) {
+				@media only screen and (min-width: $bp__full-menu + 1) {
 					display: block;
 				}
 			}
@@ -792,6 +801,7 @@ p {
 		display			: block;
 		text-decoration	: none;
 		color 			: #fff;
+		box-sizing: border-box;
 
 		&:hover {
 			color: #9B1418;
@@ -844,7 +854,12 @@ p {
 	&.toggled {
 
 		.nav-menu {
+
 			@media screen and (max-width: $bp__menu-button) {
+				margin-top 		: 3em;
+			}
+
+			@media screen and (max-width: $bp__full-menu) {
 				display			: block;
 				width			: 100%;
 				border			: none;
@@ -853,11 +868,10 @@ p {
 				box-shadow		: none;
 				border-radius	: 0;
 				text-shadow		: none;
-				margin-top 		: 3em;
 			}
 
 			&:hover {
-				@media screen and (max-width: $bp__menu-button) {
+				@media screen and (max-width: $bp__full-menu) {
 					border		: none;
 					box-shadow	: none;
 				}
@@ -871,6 +885,7 @@ p {
 .menu {
 	text-align 		: center;
 	font-size 		: 18px;
+	box-sizing: border-box;
 }
 
 // Center Menu
@@ -881,7 +896,8 @@ p {
 }
 
 /* Small menu */
-.menu-toggle {
+.menu-toggle,
+.menu-toggle:hover {
 	background 		: #000;
 	border 			: 0;
 	border-radius 	: 0;
@@ -897,12 +913,7 @@ p {
 	text-transform 	: uppercase;
 	width			: 100%;
 
-	&:hover {
-		border		: none;
-		box-shadow	: none;
-	}
-
-	@media only screen and (min-width: $bp__menu-button + 1) {
+	@media only screen and (min-width: $bp__full-menu + 1) {
 		display: none;
 	}
 }
@@ -919,6 +930,7 @@ p {
 	padding: 1em;
 	float: left;
 	width: 100%;
+	box-sizing: border-box;
 
 	a {
 		color: #9B1418;
@@ -1334,6 +1346,7 @@ div#nextend-accordion-menu-uniquea4f2340 dl.level1 dt.parent .inner {
 
 	.ui-accordion-header {
 		padding-left: 1.25em !important;
+		line-height: 1em !important;
 	}
 
 	.ui-accordion-content {

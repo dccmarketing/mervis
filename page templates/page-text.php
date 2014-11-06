@@ -4,7 +4,7 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <!-- ==================== PAGE HEADER ==================== -->
-<div id="pageheadertext" class="pageheader">
+<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( get_the_ID() ); ?>);">
 	<div class="headerpagesub" id="headerpagesub">
 		<?php the_title(); ?>
 	</div>
