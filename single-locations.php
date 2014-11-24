@@ -27,8 +27,11 @@ if (have_posts()) :
 
 			get_template_part( 'content', 'location' );
 
-		?></div><!-- .mobile-content -->
-	</div><!-- .container -->
+		?></div><!-- .mobile-content --><?php
+
+		echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );
+
+	?></div><!-- .container -->
 </div><!-- .content --><?php
 
 	endwhile;

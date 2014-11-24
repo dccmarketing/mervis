@@ -142,8 +142,7 @@ function mervis_scripts() {
 
 	wp_enqueue_script( 'mervis-public-script', get_template_directory_uri() . '/js/public.js', array( 'jquery', 'jquery-ui-accordion' ) );
 	wp_enqueue_script( 'mervis-nav-script', get_template_directory_uri() . '/js/navigation.min.js', array(), '20130115', true );
-
-	// <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	wp_enqueue_script( 'mervis-maps', 'https://maps.googleapis.com/maps/api/js?sensor=false' );
 
 } // mervis_scripts()
 add_action( 'wp_enqueue_scripts', 'mervis_scripts' );

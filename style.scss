@@ -1,11 +1,11 @@
-/*
-Theme Name: Mervis Industries
-Theme URI: http://www.mervis.com
-Version: 1.0
-Author: Aaron Stanley & Brian Armstrong
-Author URI: http://www.dccmarketing.com
-Template: mervis
-*/
+/*!
+ * Theme Name: Mervis Industries
+ * Theme URI: http://www.mervis.com
+ * Version: 1.0
+ * Author: Aaron Stanley & Brian Armstrong
+ * Author URI: http://www.dccmarketing.com
+ * Template: mervis
+ */
 
 $bp__menu-button: 650px;
 $bp__tablet 	: $bp__menu-button + 65;
@@ -97,6 +97,7 @@ $bp__full-menu 	: 900px;
 
 body {
 	margin: 0;
+	font-family: 'reg';
 
 	@media screen and (max-width: $bp__menu-button) {
 		overflow: hidden;
@@ -675,6 +676,11 @@ p {
 	@media screen and (max-width: $bp__menu-button) {
 		text-align: left !important;
 	}
+}
+
+.map_canvas {
+	width: 325px; 
+	height: 280px
 }
 
 
@@ -1356,3 +1362,20 @@ div#nextend-accordion-menu-uniquea4f2340 dl.level1 dt.parent .inner {
 		}
 	}
 }
+
+
+
+.ui-accordion-content[aria-hidden="true"] {
+	display: block !important;
+	position: absolute;	
+	left: -10000px;
+	overflow: hidden !important;
+}
+
+.ui-accordion-content[aria-hidden="false"] {
+	display: inherit !important;
+	position: inherit;	
+	left: inherit;
+	overflow: inherit;
+}
+

@@ -50,9 +50,32 @@
 
 	</div>
 	<div class="fright" id="disablemap" style="width:325px;">
-		<div><iframe width="325" height="280" frameborder="0" src="http://www.bing.com/maps/embed/viewer.aspx?v=3&cp=<?php the_field('lat'); ?>~<?php the_field('long'); ?>&lvl=12&w=325&h=280&sty=r&typ=s&pp=&ps=55&dir=0&mkt=en-us&src=SHELL&form=BMEMJS"></iframe></div>
-		<div class="s12 right"><a href="http://www.bing.com/maps/?cp=<?php the_field('lat'); ?>~<?php the_field('long'); ?>&sty=r&lvl=12&sp=&mm_embed=map" target="_blank">View Larger Map</a></div>
-	</div>
+		<div><script>
+			var map = null;
+			function initialize() {
+				var map_canvas = document.getElementById('<?php echo "map_canvas_" . get_the_ID(); ?>');
+				var myLoc = new google.maps.LatLng(<?php the_field('lat'); ?>,<?php the_field('long'); ?>);
+				var map_options = {
+					center: myLoc,
+					zoom: 12,
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					disableDefaultUI: true
+				}
+				map = new google.maps.Map(map_canvas, map_options)
+
+				var marker = new google.maps.Marker({
+					position: myLoc,
+					map: map,
+					animation: google.maps.Animation.DROP,
+				});
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		<div id="map_canvas_<?php echo get_the_ID(); ?>" class="map_canvas"></div>
+		<a href="https://www.google.com/maps?saddr=My+Location&daddr=<?php the_field('lat'); ?>,<?php the_field('long'); ?>" target="_blank">Get Directions</a>
+		
+		</div>
+	</div><!-- .fright -->
 	<br style="clear:both" />
 
-</div>
+</div><!-- //wrapper div -->
