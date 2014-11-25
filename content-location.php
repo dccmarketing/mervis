@@ -72,7 +72,7 @@
 			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
 		<div id="map_canvas_<?php echo get_the_ID(); ?>" class="map_canvas"></div>
-		<a href="https://www.google.com/maps?saddr=My+Location&daddr=<?php the_field('lat'); ?>,<?php the_field('long'); ?>" target="_blank">Get Directions</a>
+		<a href="https://www.google.com/maps?saddr=My+Location&daddr=<?php the_field('lat'); ?>,<?php the_field('long'); ?>" target="_blank">Map It</a>
 		
 		</div>
 	</div><!-- .fright -->

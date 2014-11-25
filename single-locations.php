@@ -29,7 +29,7 @@ if (have_posts()) :
 
 		?></div><!-- .mobile-content --><?php
 
-		echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );
+		//echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );
 
 	?></div><!-- .container -->
 </div><!-- .content --><?php
