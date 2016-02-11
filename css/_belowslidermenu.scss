@@ -1,0 +1,239 @@
+/**
+ * Below Slider Menu
+ */
+
+.main-navigation {
+	clear			: both;
+	display			: block;
+	float			: left;
+	width			: 100%;
+	background 		: #000;
+	margin-bottom 	: 5em;
+	box-sizing 		: border-box;
+
+	@media only screen and (min-width: $bp__menu-button + 1) {
+		margin-bottom 	: 1.5em;
+	}
+
+	ul {
+		list-style	: none;
+		margin		: 0;
+		padding-left: 0;
+		display 	: none;
+		box-sizing 	: border-box;
+
+		@media screen and (min-width: $bp__full-menu + 1) {
+			display: inline-block;
+		}
+
+		ul {
+			display		: inherit;
+			background	: #000;
+			box-sizing: border-box;
+
+			@media only screen and (min-width: $bp__full-menu + 1) {
+				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
+				float		: left;
+				position	: absolute;
+				top			: 2em;
+				left		: -999em;
+				z-index		: 99999;
+				width 		: 300px;
+			}
+
+			ul {
+				box-sizing: border-box;
+
+				a {
+					@media screen and (max-width: $bp__full-menu) {
+						padding: 0.5em 3em;
+						border-left: none;
+					}
+				}
+
+				@media only screen and (min-width: $bp__full-menu + 1) {
+					left: -999em;
+					top	: 0;
+				}
+			} // third ul
+
+			a {
+
+				@media screen and (max-width: $bp__full-menu) {
+					padding: 0.5em 2em;
+				}
+			}
+
+			li {
+				@media only screen and (min-width: $bp__full-menu + 1) {
+					display: block;
+					float: none;
+				}
+			}
+
+			li:last-child {
+				@media screen and (max-width: $bp__full-menu) {
+					padding-bottom: 0;
+				}
+
+				&:hover {
+
+					> ul {
+						@media only screen and (min-width: $bp__full-menu + 1) {
+							left: 100%;
+						}
+					}
+				}
+			}
+		} // second ul
+
+		li {
+
+			&:hover {
+				> ul {
+					left: 0;
+				}
+			}
+		}
+	} // first ul
+
+	li {
+		text-align: left;
+		box-sizing: border-box;
+
+		@media only screen and (min-width: $bp__full-menu + 1) {
+			float	: left;
+			position: relative;
+		}
+
+		&:hover {
+
+			> ul {
+				@media only screen and (min-width: $bp__full-menu + 1) {
+					display: block;
+				}
+			}
+		}
+	} // li
+
+	a {
+		padding 		: 0.5em 0 0.5em 1em;
+		display			: block;
+		text-decoration	: none;
+		color 			: #fff;
+		box-sizing: border-box;
+
+		&:hover {
+			color: #9B1418;
+		}
+	}
+
+	.current_page_item,
+	.current-menu-item,
+	.current-menu-parent,
+	.current_page_ancestor {
+
+		&:hover {
+
+			> a {
+				color: #939598;
+			}
+		}
+
+		> a {
+			color: #9B1418;
+		}
+	}
+
+	.menu-item-has-children {
+
+		a {
+
+			&:after {
+				content:  "\f0d7";
+				font-style: normal;
+				font-variant: normal;
+				font-weight: normal;
+				font-size: inherit;
+				font-family: FontAwesome;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				margin-left: 0.5em;
+			}
+		}
+
+		ul {
+			a {
+				&:after {
+					content: "";
+				}
+			}
+		}
+	} // .menu-item-has-children
+
+	&.toggled {
+
+		.nav-menu {
+
+			@media screen and (max-width: $bp__menu-button) {
+				margin-top 		: 3.5em;
+			}
+
+			@media screen and (max-width: $bp__full-menu) {
+				display			: block;
+				width			: 100%;
+				border			: none;
+				line-height		: 1.25em;
+				font-size		: 1.25em;
+				box-shadow		: none;
+				border-radius	: 0;
+				text-shadow		: none;
+			}
+
+			&:hover {
+				@media screen and (max-width: $bp__full-menu) {
+					border		: none;
+					box-shadow	: none;
+				}
+			}
+		} // .nav-menu
+
+	} // &.toggled
+
+} // .main-nav
+
+.menu {
+	text-align 		: center;
+	font-size 		: 18px;
+	box-sizing: border-box;
+}
+
+// Center Menu
+.menu-default-container {
+	//max-width	: $size__max-width;
+	margin		: 0 auto;
+	text-align	: center;
+}
+
+/* Small menu */
+.menu-toggle,
+.menu-toggle:hover {
+	background 		: #000;
+	border 			: 0;
+	border-radius 	: 0;
+	box-shadow		: none;
+	color 			: #fff !important;
+	display			: block;
+	font-size		: 1.25em;
+	font-family 	: bold;
+	line-height		: 1.25em;
+	padding 		: 0.5em !important;
+	text-align 		: center;
+	text-shadow		: none;
+	text-transform 	: uppercase;
+	width			: 100%;
+
+	@media only screen and (min-width: $bp__full-menu + 1) {
+		display: none;
+	}
+}

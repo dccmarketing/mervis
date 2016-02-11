@@ -11,30 +11,31 @@ if (have_posts()) :
 
 	while (have_posts()) : the_post();
 
-?><!-- ==================== PAGE HEADER ==================== -->
-<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( 118 ); ?>);">
-	<div class="headerpagesub" id="headerpagesub"><?php the_title(); ?></div>
-</div><?php
+		?><!-- ==================== PAGE HEADER ==================== -->
+		<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( 118 ); ?>);">
+			<div class="headerpagesub" id="headerpagesub"><?php the_title(); ?></div>
+		</div><?php
 
-	get_template_part( 'menus/menu', 'belowslider' );
+			get_template_part( 'menus/menu', 'belowslider' );
 
-?><!-- ==================== PAGE HEADER ==================== -->
+		?><!-- ==================== PAGE HEADER ==================== -->
 
-<div class="content">
-	<div class="container"><?php
+		<div class="content">
+			<div class="container"><?php
 
-		?><div class="fleft" id="mobile-content"><?php
+				?><div class="fleft" id="mobile-content"><?php
 
-			get_template_part( 'content', 'location' );
+					get_template_part( 'content', 'location' );
 
-		?></div><!-- .mobile-content --><?php
+				?></div><!-- .mobile-content --><?php
 
-		//echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );
+				//echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );
 
-	?></div><!-- .container -->
-</div><!-- .content --><?php
+			?></div><!-- .container -->
+		</div><!-- .content --><?php
 
 	endwhile;
+
 endif;
 
-get_footer(); ?>
+get_footer();

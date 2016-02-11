@@ -1,0 +1,118 @@
+/**
+ * Upper Tabs Menus
+ */
+
+#topmenu {
+	position: absolute;
+
+	@media only screen and (max-width: $bp__menu-button) {
+		float 		: inherit;
+		margin-top 	: 198px;
+		width 		: 100%;
+		background 	: #9B1418;
+
+		.home & {
+			margin-top: 148px;
+		}
+	}
+
+	@media only screen and (min-width: $bp__menu-button + 1) {
+		padding-right 	: 1em;
+		right 			: 0;
+	}
+}
+
+.upper-tab {
+	text-transform 	: uppercase;
+	font-size 		: 16px;
+	line-height 	: 24px;
+	font-family 	: demi;
+	padding 		: 8px 10px;
+	float 			: left;
+	box-sizing	 	: border-box;
+	overflow 		: hidden;
+	width 			: 25%;
+	text-align 		: center;
+
+	&:hover {
+		color 		: #FFF;
+		background 	: #000;
+
+		> a {
+			color: #FFF !important;
+		}
+	}
+
+	@media screen and (min-width: $bp__upper-tab-text) {
+		width: 30%;
+	}
+
+	@media only screen and (min-width: $bp__menu-button + 1) {
+		background 					: #FFF;
+		margin 						: 0 3px;
+		width 						: 68px;
+		//width 		: 126px;
+		//height 		: 34px;
+		//margin		: 15px 0 0;
+		line-height					: 20px;
+		float 						: right;
+		text-align 					: left;
+		border-bottom-right-radius 	: 10px;
+		border-bottom-left-radius 	: 10px;
+
+		a {
+			color: #9B1418 !important;
+		}
+	}
+
+	@media screen and (min-width: $bp__full-menu) {
+		height 		: 2.25em;
+		margin 		: 0 0.25em;
+		width 		: 148px;
+		text-align 	: center;
+
+		a {
+			color: #9B1418 !important;
+		}
+
+	}
+
+	& .dashicons {
+		font-size 	: 3em;
+		height 		: auto;
+
+		@media screen and (min-width: $bp__upper-tab-text) and (max-width: $bp__menu-button ) {
+			font-size: 1.25em;
+		}
+
+		@media screen and (min-width: $bp__full-menu) {
+			font-size: 1.25em;
+		}
+	}
+
+	&.facebook {
+
+		@media screen and (min-width: $bp__upper-tab-text) and (max-width: $bp__menu-button) {
+			width: 40px;
+		}
+
+		@media screen and (min-width: $bp__full-menu) {
+			width: 40px;
+		}
+	}
+}
+
+.tab-label {
+	@extend %hidetext;
+
+	@media screen and (min-width: $bp__upper-tab-text) and (max-width: $bp__menu-button) {
+		font-size 	: 1em;
+		text-indent : 0px;
+	}
+
+	@media screen and (min-width: $bp__full-menu) {
+		font-size 	: 1em;
+		text-indent : 0px;
+	}
+
+}

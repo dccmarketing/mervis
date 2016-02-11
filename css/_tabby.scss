@@ -1,0 +1,129 @@
+/* _________________________ TABBY OVERRRIDES _________________________ */
+
+.responsive-tabs {
+
+	.responsive-tabs__heading {
+		display: none;
+
+		&:focus {
+			outline: 1px solid transparent;
+		}
+	}
+
+	.responsive-tabs__list__item {
+		display: inline;
+		cursor:pointer;
+		margin:0 10px 0 0 !important;
+		border: 1px solid transparent;
+		border-bottom: none;
+		text-transform: uppercase;
+		font-family:'boldob' !important;
+		-webkit-font-smoothing: antialiased !important;
+		font-size: 24px !important;
+		color: #FFF !important;
+		padding: 7px 10px;
+		-webkit-border-radius: 5px !important;
+		-moz-border-radius: 5px !important;
+		border-radius: 5px !important;
+		background: #993333;
+
+		&:focus {
+			outline: 1px solid transparent;
+		}
+
+		&:hover {
+			color: #222;
+			background: rgb(153, 153, 153);
+		}
+	}
+
+	.responsive-tabs__list {
+		font-size: 18px;
+		line-height: 18px;
+		margin: 20px 0 10px 0;
+		padding-bottom:0;
+	}
+
+	.responsive-tabs__heading--active {
+		&:focus {
+			outline: none;
+		}
+	}
+	.responsive-tabs__list__item--active {
+		text-transform: uppercase;
+		font-family:'boldob' !important;
+		-webkit-font-smoothing: antialiased !important;
+		font-size: 24px !important;
+		color: #FFF !important;
+		padding: 7px 10px;
+		-webkit-border-radius: 5px !important;
+		-moz-border-radius: 5px !important;
+		border-radius: 5px !important;
+		background: #993333;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			background: rgb(153, 153, 153);
+		}
+	}
+
+	.responsive-tabs__panel {
+		margin-bottom: 20px;
+		padding: 0;
+	}
+
+} // .responsive-tabs
+
+.responsive-tabs-wrapper {
+	clear: both;
+	margin-bottom: 20px;
+	zoom: 1;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.ui-accordion {
+
+	.ui-accordion-icons {
+		outline:0;
+	}
+
+	.ui-accordion-header {
+		padding-left: 1.25em !important;
+		line-height: 1em !important;
+	}
+
+	.ui-accordion-content {
+
+		@media screen and (max-width: $bp__menu-button) {
+			padding: 12px !important;
+		}
+	}
+}
+
+
+
+.ui-accordion-content[aria-hidden="true"] {
+	display: block !important;
+	position: absolute;
+	left: -10000px;
+	overflow: hidden !important;
+}
+
+.ui-accordion-content[aria-hidden="false"] {
+	display: inherit !important;
+	position: inherit;
+	left: inherit;
+	overflow: inherit;
+}

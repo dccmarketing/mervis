@@ -1,0 +1,158 @@
+/**
+ * Footer
+ */
+
+.footer {
+	color: #fff;
+	background: #000;
+	padding: 1em;
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+
+	a {
+		color: #9B1418;
+		font-family: 'bold';
+
+		&:hover {
+			color: #CB2128;
+		}
+	}
+
+	&.home {
+		color: #939598;
+		background: #fff;
+
+		.footer-title,
+		.footlinks a {
+			color 		: #6d6e71;
+			font-size 	: 16px;
+			line-height : 20px;
+			font-family : 'bold';
+		}
+	}
+}
+
+.footer-wrap {
+	width 		: 100%;
+	margin 		: 0 auto;
+	max-width 	: 1040px;
+}
+
+.footer-title {
+	color: #9B1418;
+	font-family: 'bold';
+}
+
+.footercon {
+	float: left;
+	border-bottom: 2px solid #fff;
+	padding: 1em 0px;
+	width: 100%;
+	box-sizing: border-box;
+
+	@media screen and (min-width: $bp__menu-button + 1) {
+		padding: 0 20px 0 0;
+		width: 48%;
+		min-height: 200px;
+		border-right: 2px solid #fff;
+		border-bottom: 0;
+	}
+
+	.home & {
+		border-bottom: 2px solid #939598;
+
+		@media screen and (min-width: $bp__menu-button + 1) {
+			border-right: 2px solid #939598;
+			border-bottom: 0;
+		}
+	}
+}
+
+.whatdoes {
+	padding: 1em 0px;
+	width: 100%;
+	border-bottom: 2px solid #fff;
+	float: left;
+	box-sizing: border-box;
+
+	@media screen and (min-width: $bp__menu-button + 1) {
+		width: 25%;
+		padding: 0 20px;
+		border-right: 2px solid #fff;
+		min-height: 200px;
+		border-bottom: 0;
+	}
+
+	.home & {
+		border-bottom: 2px solid #939598;
+
+		@media screen and (min-width: $bp__menu-button + 1) {
+			border-right: 2px solid #939598;
+			border-bottom: 0;
+		}
+	}
+}
+
+.footer-links {
+	width: 100%;
+	float: left;
+	padding: 1em 0px;
+	box-sizing: border-box;
+
+	@media screen and (min-width: $bp__menu-button + 1) {
+		padding: 0 0 0 20px;
+		min-height: 200px;
+		width: 25%;
+	}
+}
+
+.footlinks {
+	a {
+		&:hover {
+			color:#9B1418;
+		}
+	}
+}
+
+.bottom {
+	color: #939598;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: 'reg';
+	padding: 1em;
+	box-sizing: border-box;
+	float: left;
+
+	a {
+		color: #939598;
+
+		&:hover {
+			color: #9B1418;
+		}
+	}
+
+	.copyright {
+		@media screen and (min-width: $bp__tablet + 10) {
+			float: left;
+		}
+	}
+
+	.links {
+		display: none;
+
+		@media screen and (min-width: $bp__tablet + 10) {
+			display: inherit;
+			float: left;
+		}
+	}
+
+	.credits {
+		@media screen and (min-width: $bp__tablet + 10) {
+			float: right;
+		}
+	}
+}

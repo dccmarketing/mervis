@@ -1,0 +1,47 @@
+/* _________________________ OVERRRIDES _________________________ */
+
+.level1 {
+
+	dt {
+
+		.inner {
+			border-style: none !important;
+		}
+
+		&.parent {
+
+			.inner {
+				background-position: 27px 7px !important;
+			}
+		}
+
+		span {
+			font-family: 'Demi' !important;
+			text-align: center !important;
+			font-size: 16px !important;
+			color: #939598 !important;
+			text-transform: uppercase !important;
+
+			&:hover {
+				color: #9B1418 !important;
+			}
+
+			&:active {
+				color: #9B1418 !important;
+			}
+		}
+
+	} // dt
+
+	.inner {
+		padding: 0px !important;
+	}
+} // .level1
+
+div#nextend-accordion-menu-uniqueec8ce95 dl.level2 .outer {
+	padding: 0px !important;
+}
+
+div#nextend-accordion-menu-uniquea4f2340 dl.level1 dt.parent .inner {
+	background:none !important;
+}

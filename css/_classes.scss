@@ -1,0 +1,226 @@
+.reg {
+	font-family: 'reg';
+}
+
+.medium {
+	font-family: 'medium';
+}
+
+.demi {
+	font-family: 'demi';
+}
+
+.bold {
+	font-family: 'bold';
+}
+
+.boldital {
+	font-family: 'boldob';
+}
+
+.s12 {
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.s13 {
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.s14 {
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.s16 {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.s18 {
+	font-size: 18px;
+	line-height: 20px;
+}
+
+.s20 {
+	font-size: 20px;
+	line-height: 22px;
+}
+
+.s22 {
+	font-size: 22px;
+	line-height: 24px;
+}
+
+.s24 {
+	font-size: 24px;
+	line-height: 26px;
+}
+
+.s26 {
+	font-size: 26px;
+	line-height: 28px;
+}
+
+.s32 {
+	font-size: 32px;
+	line-height: 34px;
+}
+
+.s40 {
+	font-size: 40px;
+	line-height: 42px;
+}
+
+.s80 {
+	font-size: 80px;
+	line-height: 82px;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+
+body {
+	margin: 0;
+	font-family: 'reg';
+
+	@media screen and (max-width: $bp__menu-button) {
+		overflow: hidden;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-family: 'boldob';
+	font-size: 32px !important;
+	line-height: 24px !important;
+	color: #6d6e71;
+	padding: 10px 0;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: 'boldob';
+	font-size: 14px !important;
+	line-height: 18px !important;
+	color: #9B1418;
+	text-transform: uppercase;
+}
+
+strong {
+	font-family: 'bold';
+}
+
+ol {
+	padding: 10px 0 !important;
+}
+
+table {
+	margin: 20px 0 !important;
+}
+
+p {
+	margin-bottom: 1.5em !important;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto 1.5em;
+	max-width: 1040px;
+}
+
+.fleft {
+	float: left;
+}
+
+.fright {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.right {
+	text-align: right;
+}
+
+.pad5 {
+	padding: 5px 0;
+}
+
+.white {
+	color: #FFF;
+}
+
+.black {
+	color: #000;
+}
+
+.grey {
+	color: #939598;
+}
+
+.dgrey {
+	color: #6d6e71;
+}
+
+.dred {
+	color: #9B1418;
+}
+
+.lred {
+	color: #CB2128;
+}
+
+.redgrad {
+	background-color: #9B1418;
+	background-image: -ms-linear-gradient(right, #9B1418 0%, #CB2128 50%, #9B1418 100%);
+	background-image: -moz-linear-gradient(right, #9B1418 0%, #CB2128 50%, #9B1418 100%);
+	background-image: -o-linear-gradient(right, #9B1418 0%, #CB2128 50%, #9B1418 100%);
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #9B1418), color-stop(0.5, #CB2128), color-stop(1, #9B1418));
+	background-image: -webkit-linear-gradient(right, #9B1418 0%, #CB2128 50%, #9B1418 100%);
+	background-image: linear-gradient(to left, #9B1418 0%, #CB2128 50%, #9B1418 100%);
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip 		: rect(1px, 1px, 1px, 1px);
+	height 		: 1px;
+	overflow 	: hidden;
+	position 	: absolute !important;
+	width 		: 1px;
+
+	&:focus {
+		background-color 	: #f1f1f1;
+		border-radius 		: 3px;
+		box-shadow 			: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip 				: auto !important;
+		color 				: #21759b;
+		display 			: block;
+		@include font-size(0.875);
+		font-weight 		: bold;
+		height 				: auto;
+		left 				: 5px;
+		line-height 		: normal;
+		padding 			: 15px 23px 14px;
+		text-decoration 	: none;
+		top 				: 5px;
+		width 				: auto;
+		z-index 			: 100000; /* Above WP toolbar */
+	}
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}

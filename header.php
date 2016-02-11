@@ -50,10 +50,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="header" class="redgrad">
 	<div class="container">
 		<div id="logo" class="fleft float">
-			<a href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg"></a>
+			<a class="track" href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg"></a>
 		</div>
 		<div id="logotext" class="fleft">
-			<a href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logotext.png"></a>
+			<a class="track" href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logotext.png"></a>
 		</div>
 		<div id="topmenu" class="fright">
 			<div class="search">
@@ -64,12 +64,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<input type="submit" class="search-submit" value="Search" />
 				</form>
 			</div>
-			<div class="upper-tab">
-				<a href="https://clientweb.mervis.com/Default.asp" target="_blank">Client Login</a>
+			<div class="upper-tab facebook">
+				<a class="track" href="https://www.facebook.com/mervisindustries" target="_blank">
+					<span class="dashicons dashicons-facebook-alt"></span>
+				</a>
+          	</div>
+			<div class="upper-tab customer-login">
+				<a class="track" href="https://clientweb.mervis.com/Default.asp" target="_blank">
+					<span class="dashicons dashicons-dashboard"></span><span class="tab-label">Client Login</span>
+				</a>
            </div>
            <div class="upper-tab">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/scrapapp.png">
-				<a target="_blank" href="https://itunes.apple.com/us/app/mervis-scrap-app/id891727156?mt=8">Scrap App</a>
+				<a class="track" href="<?php echo site_url( '/texting/' ); ?>" target="_blank">
+					<span class="dashicons dashicons-phone"></span> <span class="tab-label">Text Club</span>
+				</a>
+           </div>
+           <div class="upper-tab">
+				<a class="track" target="_blank" href="http://www.mervis.com/texting/scrap-app/">
+					<span class="dashicons dashicons-smartphone"></span><span class="tab-label">Scrap App</span>
+				</a>
            </div>
 		</div>
 		<div class="header-menu"><?php

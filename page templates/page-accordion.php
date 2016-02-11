@@ -1,53 +1,66 @@
-<?php 
-/** 
+<?php
+/**
  * Template Name: Accordion
  */
 
-get_header(); ?>
+get_header();
 
-<?php if (have_posts()) : ?>
-<?php while (have_posts()) : the_post(); ?>
+if (have_posts()) :
 
-<!-- ==================== PAGE HEADER ==================== -->
-<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( get_the_ID() ); ?>);">
-	<div class="headerpagesub" id="headerpagesub">
-		<?php the_title(); ?>
-	</div>
-</div><?php
+	while (have_posts()) : the_post();
 
-	get_template_part( 'menus/menu', 'belowslider' );
+		?><!-- ==================== PAGE HEADER ==================== -->
+		<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( get_the_ID() ); ?>);">
+			<div class="headerpagesub" id="headerpagesub"><?php
 
-?><!-- ==================== PAGE HEADER ==================== -->
+				the_title();
 
-<div class="content">
-	<div class="container">
+			?></div>
+		</div><?php
 
-		<div class="breadcrumbs">
-			<?php if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-			} ?>
-		</div>
-		<div class="fleft" id="mobile-content">
-			<div class="adj-padding bold s32 upper dred"><?php the_title(); ?></div>
-			<div class="adj-padding justify medium s14" style="padding:10px 0;"><?php
-				
-				the_content();
-				
-			?><div id="accordion">
-				<?php if(get_field('accordion')): ?>
-				<?php while(has_sub_field('accordion')): ?>
-					<h1><?php the_sub_field('title'); ?></h1>
-					<div class="justify medium s14"><?php the_sub_field('content'); ?></div>
-				<?php endwhile; ?>
-				<?php endif; ?>
-			</div>
+			get_template_part( 'menus/menu', 'belowslider' );
 
-			<br style="clear:both" />
-		</div><!-- #mobile-content -->
-	</div><!-- .container -->
-</div><!-- .content -->
+		?><!-- ==================== PAGE HEADER ==================== -->
 
-<?php endwhile; ?>
-<?php endif; ?>
+		<div class="content">
+			<div class="container">
 
-<?php get_footer(); ?>
+				<div class="breadcrumbs"><?php
+
+					if ( function_exists('yoast_breadcrumb') ) {
+
+						yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+
+					}
+
+				?></div>
+				<div class="fleft" id="mobile-content">
+					<div class="adj-padding bold s32 upper dred"><?php the_title(); ?></div>
+					<div class="adj-padding justify medium s14" style="padding:10px 0;"><?php
+
+						the_content();
+
+					?><div id="accordion"><?php
+
+						if( get_field( 'accordion' ) ):
+
+							while( has_sub_field( 'accordion' ) ) :
+
+								?><h1><?php the_sub_field('title'); ?></h1>
+								<div class="justify medium s14"><?php the_sub_field('content'); ?></div><?php
+
+							endwhile;
+
+						endif;
+
+					?></div>
+					<br style="clear:both" />
+				</div><!-- #mobile-content -->
+			</div><!-- .container -->
+		</div><!-- .content --><?php
+
+	endwhile;
+
+endif;
+
+get_footer();

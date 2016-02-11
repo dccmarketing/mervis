@@ -1,39 +1,47 @@
-<?php get_header(); ?>
+<?php
 
-<?php if (have_posts()) : ?>
-<?php while (have_posts()) : the_post(); ?>
+get_header();
 
-<!-- ==================== PAGE HEADER ==================== -->
-<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( 118 ); ?>);">
-	<div class="headerpagesub" id="headerpagesub">News</div>
-</div><?php
+if (have_posts()) :
 
-	get_template_part( 'menus/menu', 'belowslider' );
+	while (have_posts()) : the_post();
 
-?><!-- ==================== PAGE HEADER ==================== -->
+		?><!-- ==================== PAGE HEADER ==================== -->
+		<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( 118 ); ?>);">
+			<div class="headerpagesub" id="headerpagesub">News</div>
+		</div><?php
 
-<div class="content">
-	<div class="container">
+			get_template_part( 'menus/menu', 'belowslider' );
 
-		<div class="breadcrumbs">
-			<?php if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-			} ?>
-		</div>
+		?><!-- ==================== PAGE HEADER ==================== -->
 
-<?php endwhile; ?>
-<?php endif; ?>
+		<div class="content">
+			<div class="container">
 
+				<div class="breadcrumbs"><?php
 
-		<div class="fleft" id="mobile-content">
+					if ( function_exists('yoast_breadcrumb') ) {
+
+						yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					}
+
+				?></div><?php
+
+	endwhile;
+
+endif;
+
+		?><div class="fleft" id="mobile-content">
 			<div class="adj-padding bold s32 upper dred" style="padding: 0 0 10px 0;"><?php the_title(); ?></div>
 
 			<div class="s14">
 				<div class="adj-padding justify medium s14"><?php the_content(); ?></div>
 			</div>
-		</div><!-- .mobile-content -->
-	</div><!-- .container -->
-</div><!-- .content -->
+		</div><!-- .mobile-content --><?php
 
+		get_sidebar();
 
-<?php get_footer(); ?>
+	?></div><!-- .container -->
+</div><!-- .content --><?php
+
+get_footer();

@@ -1,0 +1,112 @@
+/**
+ * Content
+ */
+.breadcrumbs {
+	display: none;
+	color: #939598;
+	font-size: 14px;
+	line-height: 16px;
+	font-family: 'medium';
+	padding: 1em;
+
+	a {
+		color: #939598;
+
+		&:hover {
+			color: #9B1418;
+		}
+	}
+
+	@media screen and (min-width: $bp__menu-button + 1) {
+		display: inherit;
+	}
+
+	#breadcrumbs {
+		margin: 0 !important;
+	}
+}
+
+.content {
+	float 		: left;
+	background 	: #fff;
+	width 		: 100%;
+
+	a {
+		color: #9B1418;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	li {
+		list-style: initial;
+		margin-left: 35px;
+	}
+
+	ul {
+		padding-bottom:20px;
+	}
+
+	&.container {
+		margin-bottom: 0 !important;
+	}
+
+	.buttons {
+		overflow: hidden;
+		margin: 0 auto 1.5em;
+
+		a {
+			font-size: 26px;
+			text-transform: uppercase;
+			padding: 1.5em;
+			float: left;
+			box-sizing: border-box;
+			color: #fff;
+			background: red;
+			margin: 0 10%;
+			text-align: center;
+			text-shadow: 1px 1px 5px #000;
+			font-family: 'boldob';
+
+			@include redgrad;
+		}
+	}
+}
+
+.page-content-title {
+	font-size: 32px;
+	line-height: 34px;
+	text-transform: uppercase;
+	color: #9B1418;
+	font-family: bold;
+	margin-bottom: 1em;
+}
+
+#pagetitleshadow {
+	text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.75);
+}
+
+#timeline {
+	display: none;
+
+	@media screen and (min-width: $bp__menu-button + 1) {
+		display: inherit;
+	}
+}
+
+#accordion {
+	@media screen and (max-width: $bp__menu-button) {
+		text-align: left !important;
+	}
+}
+
+.map_canvas {
+	width: 325px;
+	height: 280px
+}
+
+.locationform {
+	float: left;
+	margin: 1em;
+}

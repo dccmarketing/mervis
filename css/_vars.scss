@@ -1,0 +1,13 @@
+$bp__upper-tab-text : 500px;
+$bp__menu-button 	: 650px;
+$bp__tablet 		: $bp__menu-button + 65;
+$bp__full-menu 		: 900px;
+
+$light 				: #fff;
+$dark 				: #231f20;
+
+$darkgray			: #58595b;
+$lightgray 			: lighten( $darkgray, 20% );
+$lightergray 		: rgba( 255, 255, 255, 0.75 );
+$red 				: #CB2128;
+$darkred 			: #9B1418;

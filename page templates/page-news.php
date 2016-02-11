@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template Name: News
  */
@@ -6,15 +6,15 @@
 get_header();
 
 if ( have_posts() ) :
-	
+
 	while (have_posts()) : the_post();
 
 		?><!-- ==================== PAGE HEADER ==================== -->
 		<div id="pageheadertext" class="pageheader" style="background-image:url(<?php echo get_pageheader_bg( get_the_ID() ); ?>);">
 			<div class="headerpagesub" id="headerpagesub"><?php
-				
+
 				the_title();
-			
+
 			?></div>
 		</div><?php
 
@@ -25,11 +25,15 @@ if ( have_posts() ) :
 		<div class="content">
 			<div class="container">
 
-				<div class="breadcrumbs">
-					<?php if ( function_exists('yoast_breadcrumb') ) {
-					yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-					} ?>
-				</div><?php
+				<div class="breadcrumbs"><?php
+
+					if ( function_exists('yoast_breadcrumb') ) {
+
+						yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+
+					}
+
+				?></div><?php
 
 	endwhile;
 
@@ -53,8 +57,11 @@ endif;
 						endif;
 						?></div>
 					</div>
-				</div><!-- .mobile-content -->
-			</div><!-- .container -->
+				</div><!-- .mobile-content --><?php
+
+				get_sidebar();
+
+			?></div><!-- .container -->
 		</div><!-- .content --><?php
 
-get_footer(); ?>
+get_footer();

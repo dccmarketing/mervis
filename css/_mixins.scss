@@ -1,0 +1,29 @@
+@mixin redgrad() {
+	background-color: $darkred;
+	background-image: linear-gradient(to left, $darkred 0%, $red 50%, $darkred 100%);
+}
+
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) + px;
+	font-size: $sizeValue + rem;
+}
+
+%hidetext {
+	text-indent	: 100%;
+	overflow	: hidden;
+	white-space	: nowrap;
+	font-size 	: 0;
+}
+
+%redbox {
+	@include redgrad();
+	color 		: $light;
+	text-align 	: center;
+	position 	: relative;
+}
+
+%appear {
+	-webkit-appearance 	: none;
+	-moz-appearance 	: none;
+	appearance 			: none;
+}
